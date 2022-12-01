@@ -14,7 +14,7 @@ jobs:
     steps:
     - name: Install k8s-ga
       #uses: k8s-ga/install-k8s-ga@v1.1.1
-      uses: uses: OctopusDeploy/install-octopus-cli-action@v1.1.1
+      uses: OctopusDeploy/install-octopus-cli-action@v1.1.1
       with:
           version: latest
     - name: Checkout
