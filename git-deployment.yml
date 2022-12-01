@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: underwater-app-github
+  labels:
+    app: k8s-ga-app
+spec:
+  selector:
+    matchLabels:
+        app: k8s-ga-app
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: k8s-ga-app
+    spec:
+      containers:
+        - name: k8s-ga-app
+          #image: 720766170633.dkr.ecr.us-east-2.amazonaws.com/octopus-underwater-app:latest
+          image: 221841911670.dkr.ecr.us-east-1.amazonaws.com/k8s-ga:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          imagePullPolicy: Always
